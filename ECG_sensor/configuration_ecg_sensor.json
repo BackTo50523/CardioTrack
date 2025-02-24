@@ -1,0 +1,25 @@
+{
+    "sampling_frequency":250, 
+    "time_interval":12,
+    "distribution_heart_rate_mean":70,
+    "distribution_heart_rate_std":8,
+    "distribution_heart_rate_std_std":3,
+
+    "deviceInfo":
+        {
+        "deviceID": "",
+        "measureType": "ECG",
+        "availableServices": [
+            "MQTT"
+        ],
+        "servicesDetails": [
+            {
+                "serviceType": "MQTT",
+                "topic":["IoT_project/device/ECG/"]
+            }
+        ],
+        "timestamp": ""
+    },
+    "catalog": "http://catalog:80/catalog/"
+
+}

@@ -1,0 +1,31 @@
+{
+    "serviceInfo": {
+        "serviceID": 5,
+        "ServiceName": "Telegram",        
+        "timestamp": 0,
+        "availableServices": [],
+        "serviceDetails": []
+    },
+    "telegram_commands":["/editpersonaldata","/unsubscribe" , "/addpatient","/updatepatient", "/deletepatient", "/viewpatientlist", "/dailyreport"],
+    "contact_service_ID": {
+            "daily_report": 1,
+            "dashboard": 6,
+            "control_strategy": 3
+        },
+    "token": "7323549890:AAFd9RCIXNRUAOj1bVLTsFlQVR2CnGo1b_U",
+    "catalog": "http://catalog:80/catalog/",
+    "endpoints": {
+        "getBroker": "http://catalog:80/catalog/broker",
+        "updateService": "http://catalog:80/catalog/updateService",
+        "registerService": "http://catalog:80/catalog/registerService",
+        "allCardiologists": "http://catalog:80/catalog/allCardiologists",
+        "addCardiologist": "http://catalog:80/catalog/addNewCardiologist",
+        "allPatients": "http://catalog:80/catalog/allPatients",
+        "updateCardiologist": "http://catalog:80/catalog/updateCardiologist",
+        "deleteCardiologist": "http://catalog:80/catalog/deleteCardiologist/?ID=",
+        "addPatient": "http://catalog:80/catalog/addNewPatient",
+        "updatePatient": "http://catalog:80/catalog/updatePatient",
+        "getByChatID" : "http://catalog:80/catalog/searchByChat/?ID=",
+        "deletePatient": "http://catalog:80/catalog/deletePatient/?ID="
+    }
+}

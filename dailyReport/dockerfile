@@ -1,0 +1,15 @@
+# set the kernel to use
+FROM python:3.10-alpine
+
+# set the working directory
+#WORKDIR /Users/caterinamarchetti/politecnico/IoT/Project/dailyReport
+
+# copy the requirements file
+COPY requirements.txt ./
+# install the needed requirements
+RUN pip3 install -r requirements.txt
+# copy all the files in the container
+COPY configurationHTTP.json ./configurationHTTP.json 
+COPY dailyReport.py ./dailyReport.py 
+# the command that will be executed when the container will start
+CMD ["python3","./dailyReport.py"]

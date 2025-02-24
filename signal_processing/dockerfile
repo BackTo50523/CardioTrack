@@ -1,0 +1,26 @@
+# set the kernel to use
+FROM python:3.13-alpine
+
+# set the working directory
+#WORKDIR /Users/caterinamarchetti/politecnico/IoT/Project/signal_processing
+
+RUN set -xe \
+    && apk update \
+    && apk add                  --no-cache                  \
+                                build-base                  \
+                                cmake                       \
+                                apache-arrow-dev            \
+    && pip3 install             --upgrade pip               \
+    && pip3 install             --no-cache-dir              \
+                                --prefer-binary             \
+                                pyarrow
+# copy the requirements file
+COPY requirements.txt ./
+# install the needed requirements
+RUN pip3 install -r requirements.txt
+# copy all the files in the container
+COPY configuration_sp.json ./
+COPY signal_processing.py ./
+COPY MyMQTT.py ./
+# the command that will be executed when the container will start
+CMD ["python3","./signal_processing.py"]

@@ -1,0 +1,17 @@
+{
+    "catalog":"http://catalog:80/catalog/",
+    "path":["registerService","updateService"],
+    "contact_service_ID":4,
+    "serviceInfo":{
+        "serviceID": 1,
+        "serviceName": "Daily_report",
+        "availableServices": ["REST"],
+        "serviceDetails": [
+        {
+            "serviceType": "REST",
+            "serviceIP": "dailyReport",
+            "servicePort":80
+        }
+        ],
+        "timestamp": 0}
+}

@@ -1,0 +1,21 @@
+{
+    "catalog": "http://catalog:80/catalog/",
+    "serviceInfo": {
+      "serviceID": 3,
+      "serviceName": "Control_Strategy",
+      "availableServices": [
+        "MQTT"
+      ],
+      "serviceDetails": [
+        {
+          "serviceType": "MQTT",
+          "topic": [
+            "IoT_project/control_strategy/processed_data",
+            "IoT_project/control_strategy/alert"
+          ]
+        }
+      ],
+      "timestamp": 1739549617.8689218
+    }
+  }
+  

@@ -1,0 +1,16 @@
+# set the kernel to use
+FROM python:3.10-alpine
+
+# set the working directory
+#WORKDIR /Users/caterinamarchetti/politecnico/IoT/Project/bp_sensor
+
+# copy the requirements file
+COPY requirements.txt ./
+# install the needed requirements
+RUN pip3 install -r requirements.txt
+# copy all the files in the container
+COPY configuration_bp_sensor.json ./
+COPY bp_sensor.py ./
+COPY MyMQTT.py ./
+# the command that will be executed when the container will start
+CMD ["python3","./bp_sensor.py"]

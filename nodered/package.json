@@ -1,0 +1,9 @@
+{
+    "name": "node-red-project",
+    "scripts": {
+        "start": "node $NODE_OPTIONS node_modules/node-red/red.js $FLOWS"},
+    "dependencies": {
+      "node-red-dashboard": "3.6.5",
+      "node-red-contrib-python3-function": "0.0.4"
+    }
+  }

@@ -1,0 +1,22 @@
+[
+    {
+        "id": "bfaf0ebcba84160c",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 1",
+        "func": "\nlet time_start = (Math.floor(Date.now() / 1000) - 300) * 1000000000;  // 5 minuti prima\nlet time_end = Math.floor(Date.now() / 1000) * 1000000000;  // Ora attuale in secondi\n\nlet servicedetails = msg.payload.serviceDetails\nlet host = servicedetails[0].serviceIP; \nlet port = servicedetails[0].servicePort; \nvar patientID = global.get(\"patientID\")\nvar url_base = host + \":\" + port + \"/database/\" + patientID.patient + \"/all\";\nmsg.url =  url_base + \"?time_start=\" + time_start + \"&time_end=\" + time_end;\nglobal.set(\"url\", url_base);\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 780,
+        "wires": [
+            [
+                "1644c0c9861b678e"
+            ]
+        ]
+    }
+]

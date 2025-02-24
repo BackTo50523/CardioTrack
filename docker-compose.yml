@@ -1,0 +1,128 @@
+# version: '3.5'
+services:
+    catalog:
+      build: ./catalog_fin
+      expose:
+        - "80"
+      ports: 
+        - "8080:80"
+    dailyreport:
+      build: ./dailyReport
+      expose:
+        - "80"
+      ports: 
+        - "8090:80"
+      depends_on: 
+        - catalog    
+      links:
+        - catalog
+        - adaptor
+    control_strategy:
+      build: ./control_strategy
+      depends_on: 
+        - catalog
+      links:
+        - catalog
+    signal_processing:
+      build: ./signal_processing
+      depends_on: 
+        - catalog
+      links:
+        - catalog
+    bs_sensor1:
+      environment:
+      - deviceID=2001
+      build: ./bs_sensor
+      depends_on: 
+        - catalog
+      links:
+        - catalog
+    bs_sensor2:
+      environment:
+      - deviceID=2002
+      build: ./bs_sensor
+      depends_on: 
+        - catalog
+      links:
+        - catalog
+
+    bp_sensor2:
+      environment:
+      - deviceID=1002
+      build: ./bp_sensor
+      depends_on: 
+        - catalog
+      links:
+        - catalog
+    bp_sensor1:
+      environment:
+      - deviceID=1001
+      build: ./bp_sensor
+      depends_on: 
+        - catalog
+      links:
+        - catalog
+
+    ecg_sensor2:
+      environment:
+      - deviceID=2
+      build: ./ECG_sensor
+      depends_on: 
+        - catalog
+      links:
+        - catalog
+    ecg_sensor1:
+      environment:
+      - deviceID=1
+      build: ./ECG_sensor
+      depends_on: 
+        - catalog
+      links:
+        - catalog
+
+    ecg_sensor3:
+      environment:
+      - deviceID=3
+      build: ./ECG_sensor
+      depends_on: 
+        - catalog
+      links:
+        - catalog
+
+    adaptor:
+      build: ./adaptor
+      depends_on: 
+        catalog:
+          condition: service_started
+        control_strategy: 
+          condition: service_started
+        signal_processing:
+          condition: service_started
+      expose:
+        - "80"
+      ports: 
+        - "8081:80"
+      links:
+        - catalog
+
+    telegram:
+      build: ./telegram
+      depends_on: 
+        - catalog    
+      links:
+        - catalog
+        - dailyreport
+
+    dashboard:
+      build: ./nodered
+      environment:
+        - TZ=Europe/Rome
+      volumes:
+        - node-red-data:/data
+      expose:
+        - "1880"
+      ports:
+        - "1880:1880"
+volumes:
+    node-red-data:
+

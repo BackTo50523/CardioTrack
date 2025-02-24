@@ -1,0 +1,21 @@
+{
+    "distribution_blood_pressure_mean":[130,80],
+    "distribution_blood_pressure_std":[4,5],
+    "correlation": 0.74,
+    "deviceInfo":
+        {
+        "deviceID": "",
+        "measureType": "bp",
+        "availableServices": [
+            "MQTT"
+        ],
+        "servicesDetails": [
+            {
+                "serviceType": "MQTT",
+                "topic": ["IoT_project/device/BP/"]
+            }
+        ],
+        "timestamp": ""
+    },
+    "catalog":"http://catalog:80/catalog/"
+}

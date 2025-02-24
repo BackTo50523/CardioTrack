@@ -1,0 +1,15 @@
+{
+    "projectOwner": "Group 12",
+    "projectName": "HF_patients_monitoring",
+    "broker": {
+        "IP": "mqtt.eclipseprojects.io",
+        "port": 1883
+    },
+    "devicesInfo": {
+        "topic_template": "IoT_project/device/{measureType}/{deviceID}"
+    },
+    "devicesList": [],
+    "patientsList": [],
+    "cardiologistsList": [],
+    "servicesList": []
+}

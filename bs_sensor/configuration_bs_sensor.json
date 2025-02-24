@@ -1,0 +1,20 @@
+{
+    "distribution_blood_saturation_mean":96,
+    "distribution_blood_saturation_std":1.5,
+    "deviceInfo":
+        {
+        "deviceID": "",
+        "measureType": "bs",
+        "availableServices": [
+            "MQTT"
+        ],
+        "servicesDetails": [
+            {
+                "serviceType": "MQTT",
+                "topic": ["IoT_project/device/BS/"]
+            }
+        ],
+        "timestamp": ""
+    },
+    "catalog":"http://catalog:80/catalog/"
+}

@@ -1,0 +1,26 @@
+{
+    "InfluxDb":
+        {
+        "host" : "eu-central-1-1.aws.cloud2.influxdata.com" , 
+        "token" : "Lj0ooc4cIkGAWR5Ww-TjmfHjTl_HeL-7rgyZOm04F-2pzpDXrgg8eMZT_NKRzbWg7Hp5gyenc1Lqe40e5KFLQg==",
+        "org" : "IoT Project",
+        "bucket" : "_monitoring"
+        },
+    
+    "catalog":"http://catalog:80/catalog/",
+    
+    "serviceInfo": {
+        "serviceID": 4,
+        "serviceName": "InfluxDB_Adaptor",
+        "availableServices": ["REST"],
+        "serviceDetails": [
+        {
+            "serviceType": "REST",
+            "serviceIP": "adaptor",
+            "servicePort":80
+        }
+        ],
+        "timestamp": 0
+    }
+    
+    }
